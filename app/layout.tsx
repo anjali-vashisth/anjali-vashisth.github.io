@@ -7,8 +7,9 @@ import ChatWidget from "@/components/ChatWidget";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Anjali Vashisth | Portfolio",
-  description: "Professional portfolio showcasing achievements, research, and creative works",
+  title: "Anjali Vashisth | Data Engineer",
+  description:
+    "Data engineering portfolio for Anjali Vashisth: pipelines, automation, metadata tools, and reliable analytics systems.",
 };
 
 export default function RootLayout({
@@ -18,10 +19,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.className} bg-primary text-dark`}>
-        <div className="flex">
+      <body className={`${inter.className} bg-[#080b0f] text-stone-100 antialiased`}>
+        <div>
           <Sidebar />
-          <main className="flex-1 overflow-auto">
+          <main className="min-h-screen md:pl-72">
             {children}
             <ChatWidget />
           </main>

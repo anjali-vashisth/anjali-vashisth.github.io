@@ -3,22 +3,44 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
-  Home,
   Award,
   BookOpen,
   Briefcase,
-  Sparkles,
+  Github,
+  Home,
+  Instagram,
+  Linkedin,
   Menu,
+  Sparkles,
+  TerminalSquare,
   X,
 } from "lucide-react";
 import { useState } from "react";
 
 const navItems = [
-  { href: "/", label: "Home", icon: Home },
-  { href: "/achievements", label: "Achievements", icon: Award },
-  { href: "/research", label: "Research & Projects", icon: BookOpen },
-  { href: "/career", label: "Career", icon: Briefcase },
-  { href: "/side-works", label: "Side Works", icon: Sparkles },
+  { href: "/", label: "Home", icon: Home, code: "00" },
+  { href: "/achievements", label: "Achievements", icon: Award, code: "01" },
+  { href: "/research", label: "Research", icon: BookOpen, code: "02" },
+  { href: "/career", label: "Career", icon: Briefcase, code: "03" },
+  { href: "/side-works", label: "Side Works", icon: Sparkles, code: "04" },
+];
+
+const socialLinks = [
+  {
+    href: "https://linkedin.com/in/anjalivash19231",
+    label: "LinkedIn",
+    icon: Linkedin,
+  },
+  {
+    href: "https://github.com/AnjaliVash",
+    label: "GitHub",
+    icon: Github,
+  },
+  {
+    href: "https://instagram.com/anjali__vashisth",
+    label: "Instagram",
+    icon: Instagram,
+  },
 ];
 
 export default function Sidebar() {
@@ -27,29 +49,45 @@ export default function Sidebar() {
 
   return (
     <>
-      {/* Mobile Menu Button */}
       <button
-        className="fixed top-4 left-4 z-50 md:hidden bg-secondary p-2 rounded-lg text-white"
-        onClick={() => setIsOpen(!isOpen)}
+        type="button"
+        className="fixed left-4 top-4 z-50 inline-flex h-11 w-11 items-center justify-center rounded-md border border-amber-300/30 bg-stone-950/90 text-amber-100 shadow-lg backdrop-blur md:hidden"
+        onClick={() => setIsOpen((open) => !open)}
+        aria-label={isOpen ? "Close navigation" : "Open navigation"}
+        aria-expanded={isOpen}
       >
-        {isOpen ? <X size={24} /> : <Menu size={24} />}
+        {isOpen ? <X size={22} /> : <Menu size={22} />}
       </button>
 
-      {/* Sidebar */}
       <aside
-        className={`fixed md:relative h-screen w-64 bg-gradient-to-b from-light via-primary to-light border-r border-secondary/20 transition-transform duration-300 z-40 ${
-          isOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"
+        className={`fixed inset-y-0 left-0 z-40 flex w-72 flex-col border-r border-stone-800 bg-[#080b0f]/95 shadow-2xl shadow-black/40 backdrop-blur-xl transition-transform duration-300 md:translate-x-0 ${
+          isOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
-        <div className="p-8">
-          {/* Logo */}
-          <Link href="/" className="block mb-12">
-            <div className="text-3xl font-bold gradient-text">AV</div>
-            <p className="text-xs text-secondary mt-2">Portfolio</p>
+        <div className="flex min-h-0 flex-1 flex-col p-5">
+          <Link
+            href="/"
+            className="group rounded-lg border border-stone-800 bg-stone-950/70 p-4"
+            onClick={() => setIsOpen(false)}
+          >
+            <div className="flex items-center gap-3">
+              <div className="flex h-11 w-11 items-center justify-center rounded-md bg-amber-300 text-stone-950 shadow-[0_0_28px_rgba(251,191,36,0.22)]">
+                <TerminalSquare size={24} aria-hidden="true" />
+              </div>
+              <div>
+                <div className="font-mono text-xs uppercase tracking-[0.22em] text-teal-200">
+                  anjali.dev
+                </div>
+                <div className="text-lg font-black text-stone-50">Data Playground</div>
+              </div>
+            </div>
+            <div className="mt-4 rounded border border-stone-800 bg-black/30 px-3 py-2 font-mono text-xs text-stone-400">
+              status: moving_data
+              <span className="ml-2 inline-block h-2 w-2 rounded-full bg-teal-300 shadow-[0_0_16px_rgba(45,212,191,0.9)]" />
+            </div>
           </Link>
 
-          {/* Navigation */}
-          <nav className="space-y-2">
+          <nav className="mt-8 space-y-2" aria-label="Primary navigation">
             {navItems.map((item) => {
               const Icon = item.icon;
               const isActive = pathname === item.href;
@@ -59,60 +97,64 @@ export default function Sidebar() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setIsOpen(false)}
-                  className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all ${
+                  className={`group flex items-center gap-3 rounded-md border px-3 py-3 transition ${
                     isActive
-                      ? "bg-gradient-to-r from-secondary to-accent text-white shadow-lg"
-                      : "text-secondary/70 hover:bg-secondary/10"
+                      ? "border-amber-300/40 bg-amber-300/10 text-amber-100"
+                      : "border-transparent text-stone-400 hover:border-teal-300/25 hover:bg-teal-300/10 hover:text-teal-100"
                   }`}
                 >
-                  <Icon size={20} />
+                  <span className="font-mono text-xs text-stone-600 group-hover:text-teal-300">
+                    {item.code}
+                  </span>
+                  <Icon size={18} aria-hidden="true" />
                   <span className="font-medium">{item.label}</span>
                 </Link>
               );
             })}
           </nav>
 
-          {/* Social Links */}
-          <div className="absolute bottom-8 left-8 right-8">
-            <p className="text-xs text-secondary/60 mb-4">Connect with me</p>
-            <div className="flex gap-4">
-              <a
-                href="https://linkedin.com/in/anjalivash19231"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-lg bg-secondary/10 flex items-center justify-center hover:bg-secondary/20 text-secondary hover:text-accent transition-all"
-                title="LinkedIn"
-              >
-                in
-              </a>
-              <a
-                href="https://github.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-lg bg-secondary/10 flex items-center justify-center hover:bg-secondary/20 text-secondary hover:text-accent transition-all"
-                title="GitHub"
-              >
-                gh
-              </a>
-              <a
-                href="https://instagram.com/anjali__vashisth"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-lg bg-secondary/10 flex items-center justify-center hover:bg-secondary/20 text-secondary hover:text-accent transition-all"
-                title="Instagram"
-              >
-                ig
-              </a>
+          <div className="mt-auto">
+            <div className="rounded-lg border border-stone-800 bg-stone-950/60 p-4">
+              <p className="font-mono text-xs uppercase tracking-[0.18em] text-stone-500">
+                current stack
+              </p>
+              <div className="mt-3 flex flex-wrap gap-2">
+                {["Python", "SQL", "Spark", "Airflow"].map((tool) => (
+                  <span key={tool} className="rounded-full bg-teal-300/10 px-2.5 py-1 text-xs text-teal-100">
+                    {tool}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div className="mt-5 flex items-center justify-between">
+              {socialLinks.map((link) => {
+                const Icon = link.icon;
+                return (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex h-11 w-11 items-center justify-center rounded-md border border-stone-800 bg-stone-950/70 text-stone-400 transition hover:-translate-y-0.5 hover:border-amber-300/45 hover:text-amber-100 focus:outline-none focus:ring-2 focus:ring-amber-200 focus:ring-offset-2 focus:ring-offset-[#080b0f]"
+                    aria-label={link.label}
+                    title={link.label}
+                  >
+                    <Icon size={18} aria-hidden="true" />
+                  </a>
+                );
+              })}
             </div>
           </div>
         </div>
       </aside>
 
-      {/* Mobile Overlay */}
       {isOpen && (
-        <div
-          className="fixed inset-0 bg-black/50 z-30 md:hidden"
+        <button
+          type="button"
+          className="fixed inset-0 z-30 bg-black/70 md:hidden"
           onClick={() => setIsOpen(false)}
+          aria-label="Close navigation overlay"
         />
       )}
     </>

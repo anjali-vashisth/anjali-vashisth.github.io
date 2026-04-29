@@ -75,18 +75,19 @@ export default function ChatWidget() {
       {/* Chat Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-8 right-8 bg-gradient-to-r from-secondary to-accent p-4 rounded-full shadow-lg hover:scale-110 transition-transform z-40"
+        className="fixed bottom-6 right-6 z-40 rounded-full border border-amber-300/40 bg-amber-300 p-4 text-stone-950 shadow-[0_0_32px_rgba(251,191,36,0.25)] hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-amber-100 focus:ring-offset-2 focus:ring-offset-[#080b0f]"
+        aria-label={isOpen ? "Close chat" : "Open chat"}
       >
-        {isOpen ? <X size={24} className="text-white" /> : <MessageCircle size={24} className="text-white" />}
+        {isOpen ? <X size={24} /> : <MessageCircle size={24} />}
       </button>
 
       {/* Chat Window */}
       {isOpen && (
-        <div className="fixed bottom-24 right-8 w-96 max-h-96 bg-gradient-to-b from-light to-primary rounded-2xl shadow-2xl border border-secondary/30 flex flex-col z-40">
+        <div className="fixed bottom-24 right-4 z-40 flex max-h-[28rem] w-[calc(100vw-2rem)] flex-col rounded-lg border border-stone-700 bg-[#0b1117]/95 shadow-2xl shadow-black/50 backdrop-blur sm:right-6 sm:w-96">
           {/* Header */}
-          <div className="bg-gradient-to-r from-secondary to-accent p-4 rounded-t-2xl">
-            <h3 className="font-bold text-white">Chat with Anjali</h3>
-            <p className="text-xs text-white/80">Ask about my experience, skills, or projects</p>
+          <div className="border-b border-stone-800 bg-stone-950/80 p-4">
+            <h3 className="font-bold text-stone-50">Chat with Anjali</h3>
+            <p className="text-xs text-stone-400">Ask about experience, skills, or projects</p>
           </div>
 
           {/* Messages */}
@@ -101,8 +102,8 @@ export default function ChatWidget() {
                 <div
                   className={`max-w-xs px-4 py-2 rounded-lg ${
                     message.sender === "user"
-                      ? "bg-secondary text-white rounded-br-none"
-                      : "bg-primary border border-secondary/20 text-dark rounded-bl-none"
+                      ? "bg-amber-300 text-stone-950 rounded-br-none"
+                      : "bg-stone-950 border border-stone-800 text-stone-200 rounded-bl-none"
                   }`}
                 >
                   <p className="text-sm">{message.text}</p>
@@ -111,11 +112,11 @@ export default function ChatWidget() {
             ))}
             {isLoading && (
               <div className="flex justify-start">
-                <div className="bg-primary border border-secondary/20 px-4 py-2 rounded-lg rounded-bl-none">
+                <div className="rounded-lg rounded-bl-none border border-stone-800 bg-stone-950 px-4 py-2">
                   <div className="flex gap-1">
-                    <div className="w-2 h-2 bg-accent rounded-full animate-bounce"></div>
-                    <div className="w-2 h-2 bg-accent rounded-full animate-bounce delay-100"></div>
-                    <div className="w-2 h-2 bg-accent rounded-full animate-bounce delay-200"></div>
+                    <div className="h-2 w-2 animate-bounce rounded-full bg-teal-300"></div>
+                    <div className="h-2 w-2 animate-bounce rounded-full bg-teal-300 delay-100"></div>
+                    <div className="h-2 w-2 animate-bounce rounded-full bg-teal-300 delay-200"></div>
                   </div>
                 </div>
               </div>
@@ -124,20 +125,21 @@ export default function ChatWidget() {
           </div>
 
           {/* Input */}
-          <form onSubmit={handleSendMessage} className="border-t border-secondary/20 p-3">
+          <form onSubmit={handleSendMessage} className="border-t border-stone-800 p-3">
             <div className="flex gap-2">
               <input
                 type="text"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="Ask me something..."
-                className="flex-1 bg-light border border-secondary/20 text-dark px-3 py-2 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-secondary"
+                className="flex-1 rounded-md border border-stone-700 bg-stone-950 px-3 py-2 text-sm text-stone-100 placeholder:text-stone-500 focus:outline-none focus:ring-2 focus:ring-teal-300"
                 disabled={isLoading}
               />
               <button
                 type="submit"
                 disabled={isLoading || !input.trim()}
-                className="bg-secondary hover:bg-accent disabled:bg-gray-300 p-2 rounded-lg transition-colors text-white"
+                className="rounded-md bg-teal-300 p-2 text-stone-950 transition-colors hover:bg-teal-200 disabled:bg-stone-700 disabled:text-stone-500"
+                aria-label="Send message"
               >
                 <Send size={16} />
               </button>
