@@ -79,16 +79,16 @@ export default function Research() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary via-gray-900 to-primary">
+    <div className="min-h-screen overflow-hidden bg-[#080b0f] text-stone-100">
       {/* Background Elements */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-secondary opacity-20 rounded-full mix-blend-multiply filter blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent opacity-20 rounded-full mix-blend-multiply filter blur-3xl animate-pulse delay-2000"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_8%,rgba(20,184,166,0.16),transparent_28%),radial-gradient(circle_at_86%_22%,rgba(245,158,11,0.12),transparent_30%),linear-gradient(135deg,#07090d_0%,#10151d_52%,#120f0a_100%)]"></div>
+        <div className="data-grid absolute inset-0 opacity-30"></div>
       </div>
 
       {/* Content */}
       <motion.div
-        className="relative md:ml-64 min-h-screen px-4 md:px-12 py-20"
+        className="relative min-h-screen px-5 py-20 sm:px-8 lg:px-12"
         variants={containerVariants}
         initial="hidden"
         animate="visible"

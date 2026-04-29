@@ -12,7 +12,6 @@ import {
   Network,
   Play,
   Server,
-  Sparkles,
   Terminal,
 } from "lucide-react";
 import { motion } from "framer-motion";
@@ -151,11 +150,6 @@ function HeroSection() {
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
       <div className="max-w-3xl">
-        <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-amber-300/25 bg-amber-200/10 px-4 py-2 text-sm text-amber-100 shadow-[0_0_30px_rgba(245,158,11,0.08)]">
-          <Sparkles size={16} aria-hidden="true" />
-          Data Engineer&apos;s Playground meets Cozy Hacker
-        </div>
-
         <h1 className="text-balance text-5xl font-black leading-[0.95] tracking-normal text-stone-50 sm:text-6xl lg:text-7xl">
           Anjali Vashisth builds systems that move data, not just dashboards.
         </h1>
