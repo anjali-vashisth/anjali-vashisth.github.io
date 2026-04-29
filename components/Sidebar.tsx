@@ -27,7 +27,7 @@ const navItems = [
 
 const socialLinks = [
   {
-    href: "https://linkedin.com/in/anjalivash19231",
+    href: "https://www.linkedin.com/in/anjalivashisth",
     label: "LinkedIn",
     icon: Linkedin,
   },

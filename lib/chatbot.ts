@@ -5,7 +5,7 @@ const resumeData = {
     email: "jobsforanjalivashisth@gmail.com",
     phone: "+91 9943750590",
     location: "Bangalore, India",
-    linkedin: "https://www.linkedin.com/in/anjali-vashisth",
+    linkedin: "https://www.linkedin.com/in/anjalivashisth",
     github: "https://github.com/anjali-vashisth",
     instagram: "https://www.instagram.com/anjali__vashisth",
   },
@@ -78,8 +78,18 @@ const resumeData = {
   awards: ["Insta Award - Big Data Automation", "Gem Award - Task Optimization", "Agile Champion", "Google Dev Hackathon Award"],
 
   publications: [
-    { title: "GCN + Polynomial Aggregation for Group Activity Recognition", venue: "IEEE Explorer", year: 2021 },
-    { title: "LIMAP: Multilayer Authentication Protocol for Wireless Body Area Network", venue: "Springer", year: 2020 },
+    {
+      title: "LIMAP: A Lightweight Multilayer Authentication Protocol for WBAN",
+      venue: "Springer",
+      date: "Aug 27, 2021",
+      link: "https://link.springer.com/article/10.1007/s11277-021-08853-x",
+    },
+    {
+      title: "GCN embedded with Polynomial Aggregation Function for Group Activity Recognition",
+      venue: "2020 IEEE 4th Conference on Information & Communication Technology (CICT)",
+      date: "Dec 5, 2020",
+      link: "https://ieeexplore.ieee.org/document/9312103/authors#authors",
+    },
   ],
 
   sideWorks: {
@@ -149,8 +159,11 @@ I'm also skilled in leadership, mentorship, and project management. What specifi
     keywords: ["publications", "research", "papers", "ieee", "springer", "academic"],
     response: `I've published 2 research papers:
 
-✓ **"GCN + Polynomial Aggregation for Group Activity Recognition"** - IEEE Explorer (2021)
-✓ **"LIMAP: Multilayer Authentication Protocol for Wireless Body Area Network"** - Springer (2020)
+✓ **"LIMAP: A Lightweight Multilayer Authentication Protocol for WBAN"** - Springer (Aug 27, 2021)
+https://link.springer.com/article/10.1007/s11277-021-08853-x
+
+✓ **"GCN embedded with Polynomial Aggregation Function for Group Activity Recognition"** - 2020 IEEE 4th Conference on Information & Communication Technology (CICT), Dec 5, 2020
+https://ieeexplore.ieee.org/document/9312103/authors#authors
 
 I'm passionate about combining academic research with practical applications. Visit the Research section for more details!`,
   },
@@ -194,7 +207,7 @@ Visit the Side Works section to learn more about my creative pursuits!`,
 
 📧 **Email:** jobsforanjalivashisth@gmail.com
 📱 **Phone:** +91 9943750590
-🔗 **LinkedIn:** linkedin.com/in/anjali-vashisth
+🔗 **LinkedIn:** www.linkedin.com/in/anjalivashisth
 💻 **GitHub:** github.com/anjali-vashisth
 📸 **Instagram:** instagram.com/anjali__vashisth
 📍 **Location:** Bangalore, India
@@ -249,5 +262,5 @@ export async function generateResponse(userMessage: string): Promise<string> {
 Or you can contact me directly at:
 📧 Email: anjalivashisth1111@gmail.com
 📱 Phone: +91 9943750590
-🔗 LinkedIn: linkedin.com/in/anjalivash19231`;
+🔗 LinkedIn: www.linkedin.com/in/anjalivashisth`;
 }

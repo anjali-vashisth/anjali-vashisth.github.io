@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Briefcase, MapPin, Calendar, TrendingUp } from "lucide-react";
+import { Briefcase, MapPin, Calendar, ExternalLink, TrendingUp } from "lucide-react";
 
 const experience = [
   {
@@ -80,6 +80,8 @@ const skills = [
     items: ["Databricks Data Engineer Associate", "AWS Cloud Practitioner", "Certified Scrum Master", "ML by Andrew Ng"],
   },
 ];
+
+const certificationsUrl = "https://www.linkedin.com/in/anjalivashisth/details/certifications/";
 
 export default function Career() {
   const containerVariants = {
@@ -192,14 +194,28 @@ export default function Career() {
                     <h3 className="text-lg font-bold text-dark">{skillGroup.category}</h3>
                   </div>
                   <div className="flex flex-wrap gap-2">
-                    {skillGroup.items.map((skill, i) => (
-                      <span
-                        key={i}
-                        className="px-3 py-1 rounded-full bg-secondary/10 text-secondary text-sm font-medium hover:bg-secondary/20 transition-colors"
-                      >
-                        {skill}
-                      </span>
-                    ))}
+                    {skillGroup.items.map((skill, i) =>
+                      skillGroup.category === "Certifications" ? (
+                        <a
+                          key={i}
+                          href={certificationsUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary/10 text-secondary text-sm font-medium hover:bg-secondary/20 transition-colors focus:outline-none focus:ring-2 focus:ring-secondary"
+                          aria-label={`View ${skill} certification on LinkedIn`}
+                        >
+                          {skill}
+                          <ExternalLink size={12} aria-hidden="true" />
+                        </a>
+                      ) : (
+                        <span
+                          key={i}
+                          className="px-3 py-1 rounded-full bg-secondary/10 text-secondary text-sm font-medium hover:bg-secondary/20 transition-colors"
+                        >
+                          {skill}
+                        </span>
+                      )
+                    )}
                   </div>
                 </motion.div>
               ))}

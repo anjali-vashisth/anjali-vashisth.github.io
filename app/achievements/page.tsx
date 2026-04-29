@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Award, Trophy, Star, Download, Award as CertIcon, Zap } from "lucide-react";
+import { Award, Trophy, Star, Download, ExternalLink, Zap } from "lucide-react";
 
 const achievements = [
   {
@@ -46,6 +46,8 @@ const certifications = [
   { title: "Scrum Master Certified", issuer: "Scrum Alliance", year: "2023" },
   { title: "Databricks Certified", issuer: "Databricks", year: "2024" },
 ];
+
+const certificationsUrl = "https://www.linkedin.com/in/anjalivashisth/details/certifications/";
 
 export default function Achievements() {
   const containerVariants = {
@@ -130,10 +132,14 @@ export default function Achievements() {
             <h2 className="text-3xl font-bold mb-8 text-light">Certifications</h2>
             <div className="space-y-4">
               {certifications.map((cert, index) => (
-                <motion.div
+                <motion.a
                   key={index}
+                  href={certificationsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   variants={itemVariants}
-                  className="p-6 rounded-xl bg-gradient-to-r from-secondary/10 to-accent/10 border border-secondary/20 hover:border-accent/40 transition-all"
+                  className="block p-6 rounded-xl bg-gradient-to-r from-secondary/10 to-accent/10 border border-secondary/20 hover:border-accent/40 transition-all focus:outline-none focus:ring-2 focus:ring-accent"
+                  aria-label={`View ${cert.title} certification on LinkedIn`}
                 >
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-4">
@@ -143,11 +149,14 @@ export default function Achievements() {
                         <p className="text-gray-400 text-sm">{cert.issuer}</p>
                       </div>
                     </div>
-                    <span className="text-sm text-gray-500 bg-secondary/10 px-3 py-1 rounded-full">
-                      {cert.year}
-                    </span>
+                    <div className="flex items-center gap-3">
+                      <span className="text-sm text-gray-500 bg-secondary/10 px-3 py-1 rounded-full">
+                        {cert.year}
+                      </span>
+                      <ExternalLink className="text-accent" size={18} aria-hidden="true" />
+                    </div>
                   </div>
-                </motion.div>
+                </motion.a>
               ))}
             </div>
           </motion.div>
