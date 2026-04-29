@@ -1,33 +1,50 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Award, Trophy, Star, Download } from "lucide-react";
+import { Award, Trophy, Star, Download, Certificate, Zap } from "lucide-react";
 
 const achievements = [
   {
-    title: "Academic Excellence Award",
-    description: "Recognition for outstanding academic performance",
-    year: "2023",
+    title: "Gem Award",
+    description: "Recognition for outstanding performance and excellence",
+    year: "2024",
     icon: Award,
+    category: "Work",
   },
   {
-    title: "Leadership Award",
-    description: "Recognized for leadership in college activities",
+    title: "Agile Champion",
+    description: "Leadership in agile practices and team coordination",
+    year: "2024",
+    icon: Zap,
+    category: "Work",
+  },
+  {
+    title: "Promoted to Senior Engineer",
+    description: "Career advancement for technical excellence",
     year: "2023",
     icon: Trophy,
+    category: "Work",
   },
   {
-    title: "Dean's List",
-    description: "Consistent academic excellence across semesters",
-    year: "2022-2023",
+    title: "Insta Award",
+    description: "Special recognition for instant impact",
+    year: "2023",
     icon: Star,
+    category: "Work",
   },
   {
-    title: "Innovation Award",
-    description: "For innovative projects and creative thinking",
-    year: "2023",
+    title: "Women Techies Hackathon Award",
+    description: "Recognition for innovation and problem-solving",
+    year: "2019",
     icon: Trophy,
+    category: "College",
   },
+];
+
+const certifications = [
+  { title: "AWS Cloud Practitioner", issuer: "Amazon Web Services", year: "2023" },
+  { title: "Scrum Master Certified", issuer: "Scrum Alliance", year: "2023" },
+  { title: "Databricks Certified", issuer: "Databricks", year: "2024" },
 ];
 
 export default function Achievements() {
@@ -73,72 +90,100 @@ export default function Achievements() {
               <span className="gradient-text">Achievements</span>
             </h1>
             <p className="text-gray-400 text-lg">
-              Recognitions and accomplishments throughout my academic and professional journey
+              Awards, recognitions, and accomplishments throughout my career
             </p>
           </motion.div>
 
-          {/* Achievements Grid */}
-          <motion.div
-            variants={containerVariants}
-            className="grid md:grid-cols-2 gap-6 mb-12"
-          >
-            {achievements.map((achievement, index) => {
-              const Icon = achievement.icon;
-              return (
+          {/* Work Achievements */}
+          <motion.div variants={itemVariants} className="mb-16">
+            <h2 className="text-3xl font-bold mb-8 text-light">Work Achievements</h2>
+            <motion.div
+              variants={containerVariants}
+              className="grid md:grid-cols-2 gap-6"
+            >
+              {achievements
+                .filter((a) => a.category === "Work")
+                .map((achievement, index) => {
+                  const Icon = achievement.icon;
+                  return (
+                    <motion.div
+                      key={index}
+                      variants={itemVariants}
+                      className="group p-8 rounded-xl bg-gradient-to-br from-secondary/10 to-accent/10 border border-secondary/20 hover:border-accent/40 card-hover"
+                    >
+                      <div className="flex items-start justify-between mb-4">
+                        <Icon className="text-secondary group-hover:text-accent transition-colors" size={32} />
+                        <span className="text-sm text-gray-400 bg-secondary/10 px-3 py-1 rounded-full">
+                          {achievement.year}
+                        </span>
+                      </div>
+                      <h3 className="text-xl font-bold text-light mb-2">{achievement.title}</h3>
+                      <p className="text-gray-400">{achievement.description}</p>
+                    </motion.div>
+                  );
+                })}
+            </motion.div>
+          </motion.div>
+
+          {/* Certifications */}
+          <motion.div variants={itemVariants} className="mb-16">
+            <h2 className="text-3xl font-bold mb-8 text-light">Certifications</h2>
+            <div className="space-y-4">
+              {certifications.map((cert, index) => (
                 <motion.div
                   key={index}
                   variants={itemVariants}
-                  className="group p-8 rounded-xl bg-gradient-to-br from-secondary/10 to-accent/10 border border-secondary/20 hover:border-accent/40 card-hover"
+                  className="p-6 rounded-xl bg-gradient-to-r from-secondary/10 to-accent/10 border border-secondary/20 hover:border-accent/40 transition-all"
                 >
-                  <div className="flex items-start justify-between mb-4">
-                    <Icon className="text-secondary group-hover:text-accent transition-colors" size={32} />
-                    <span className="text-sm text-gray-400 bg-secondary/10 px-3 py-1 rounded-full">
-                      {achievement.year}
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-4">
+                      <Certificate className="text-secondary flex-shrink-0" size={24} />
+                      <div>
+                        <h3 className="text-lg font-bold text-light">{cert.title}</h3>
+                        <p className="text-gray-400 text-sm">{cert.issuer}</p>
+                      </div>
+                    </div>
+                    <span className="text-sm text-gray-500 bg-secondary/10 px-3 py-1 rounded-full">
+                      {cert.year}
                     </span>
                   </div>
-                  <h3 className="text-xl font-bold text-light mb-2">{achievement.title}</h3>
-                  <p className="text-gray-400">{achievement.description}</p>
                 </motion.div>
-              );
-            })}
+              ))}
+            </div>
           </motion.div>
 
-          {/* College Info Section */}
+          {/* College Achievements */}
           <motion.div variants={itemVariants} className="mb-12">
             <h2 className="text-3xl font-bold mb-6 text-light">College Achievements</h2>
             <div className="p-8 rounded-xl bg-gradient-to-r from-secondary/10 to-accent/10 border border-secondary/20">
               <div className="grid md:grid-cols-2 gap-8">
                 <div>
-                  <h3 className="text-xl font-semibold text-secondary mb-3">Education</h3>
-                  <ul className="space-y-2 text-gray-300">
-                    <li className="flex items-center gap-2">
-                      <span className="w-2 h-2 bg-accent rounded-full"></span>
-                      Bachelor's Degree - Computer Science
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="w-2 h-2 bg-accent rounded-full"></span>
-                      GPA: 3.8/4.0
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="w-2 h-2 bg-accent rounded-full"></span>
-                      Graduated with Honors
-                    </li>
+                  <h3 className="text-xl font-semibold text-secondary mb-4">Awards & Recognition</h3>
+                  <ul className="space-y-3 text-gray-300">
+                    {achievements
+                      .filter((a) => a.category === "College")
+                      .map((ach, i) => (
+                        <li key={i} className="flex items-center gap-2">
+                          <span className="w-2 h-2 bg-accent rounded-full"></span>
+                          {ach.title} ({ach.year})
+                        </li>
+                      ))}
                   </ul>
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-secondary mb-3">Key Accomplishments</h3>
-                  <ul className="space-y-2 text-gray-300">
+                  <h3 className="text-xl font-semibold text-secondary mb-4">Key Accomplishments</h3>
+                  <ul className="space-y-3 text-gray-300">
                     <li className="flex items-center gap-2">
                       <span className="w-2 h-2 bg-accent rounded-full"></span>
-                      Class Valedictorian
+                      Vice President - Vriksh Club
                     </li>
                     <li className="flex items-center gap-2">
                       <span className="w-2 h-2 bg-accent rounded-full"></span>
-                      Scholarship Recipient
+                      Published 2 Papers (IEEE & Springer)
                     </li>
                     <li className="flex items-center gap-2">
                       <span className="w-2 h-2 bg-accent rounded-full"></span>
-                      Active in Multiple Clubs
+                      Active in Multiple Clubs & Events
                     </li>
                   </ul>
                 </div>
