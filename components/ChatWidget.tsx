@@ -77,12 +77,12 @@ export default function ChatWidget() {
         onClick={() => setIsOpen(!isOpen)}
         className="fixed bottom-8 right-8 bg-gradient-to-r from-secondary to-accent p-4 rounded-full shadow-lg hover:scale-110 transition-transform z-40"
       >
-        {isOpen ? <X size={24} /> : <MessageCircle size={24} />}
+        {isOpen ? <X size={24} className="text-white" /> : <MessageCircle size={24} className="text-white" />}
       </button>
 
       {/* Chat Window */}
       {isOpen && (
-        <div className="fixed bottom-24 right-8 w-96 max-h-96 bg-gradient-to-b from-gray-900 to-primary rounded-2xl shadow-2xl border border-secondary/30 flex flex-col z-40">
+        <div className="fixed bottom-24 right-8 w-96 max-h-96 bg-gradient-to-b from-light to-primary rounded-2xl shadow-2xl border border-secondary/30 flex flex-col z-40">
           {/* Header */}
           <div className="bg-gradient-to-r from-secondary to-accent p-4 rounded-t-2xl">
             <h3 className="font-bold text-white">Chat with Anjali</h3>
@@ -102,7 +102,7 @@ export default function ChatWidget() {
                   className={`max-w-xs px-4 py-2 rounded-lg ${
                     message.sender === "user"
                       ? "bg-secondary text-white rounded-br-none"
-                      : "bg-gray-700/50 text-gray-100 rounded-bl-none"
+                      : "bg-primary border border-secondary/20 text-dark rounded-bl-none"
                   }`}
                 >
                   <p className="text-sm">{message.text}</p>
@@ -111,7 +111,7 @@ export default function ChatWidget() {
             ))}
             {isLoading && (
               <div className="flex justify-start">
-                <div className="bg-gray-700/50 px-4 py-2 rounded-lg rounded-bl-none">
+                <div className="bg-primary border border-secondary/20 px-4 py-2 rounded-lg rounded-bl-none">
                   <div className="flex gap-1">
                     <div className="w-2 h-2 bg-accent rounded-full animate-bounce"></div>
                     <div className="w-2 h-2 bg-accent rounded-full animate-bounce delay-100"></div>
@@ -131,13 +131,13 @@ export default function ChatWidget() {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="Ask me something..."
-                className="flex-1 bg-gray-700/50 text-white px-3 py-2 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-secondary"
+                className="flex-1 bg-light border border-secondary/20 text-dark px-3 py-2 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-secondary"
                 disabled={isLoading}
               />
               <button
                 type="submit"
                 disabled={isLoading || !input.trim()}
-                className="bg-secondary hover:bg-accent disabled:bg-gray-600 p-2 rounded-lg transition-colors"
+                className="bg-secondary hover:bg-accent disabled:bg-gray-300 p-2 rounded-lg transition-colors text-white"
               >
                 <Send size={16} />
               </button>

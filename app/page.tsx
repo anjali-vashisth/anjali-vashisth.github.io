@@ -26,11 +26,11 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary via-gray-900 to-primary overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-primary via-light to-primary overflow-hidden">
       {/* Animated Background */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-secondary opacity-20 rounded-full mix-blend-multiply filter blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent opacity-20 rounded-full mix-blend-multiply filter blur-3xl animate-pulse delay-2000"></div>
+        <div className="absolute top-0 right-0 w-96 h-96 bg-secondary opacity-10 rounded-full mix-blend-multiply filter blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent opacity-10 rounded-full mix-blend-multiply filter blur-3xl animate-pulse delay-2000"></div>
       </div>
 
       {/* Content */}
@@ -49,20 +49,20 @@ export default function Home() {
                 <h1 className="text-5xl md:text-6xl font-bold mb-2">
                   <span className="gradient-text">Anjali Vashisth</span>
                 </h1>
-                <p className="text-2xl text-secondary font-semibold mb-6">Full Stack Developer | Designer | Community Builder</p>
-                <p className="text-gray-300 text-lg leading-relaxed mb-6">
-                  Creative technologist passionate about building impactful solutions. Combining data-driven development with artistic design to create meaningful experiences.
+                <p className="text-2xl text-secondary font-semibold mb-6">Data Engineer | Technical Lead | Problem Solver</p>
+                <p className="text-dark/80 text-lg leading-relaxed mb-6">
+                  Experienced data engineer with 5 years building robust ETL pipelines, automation solutions, and scalable big data systems. Passionate about optimizing workflows and driving technical excellence.
                 </p>
                 
                 {/* Contact Info */}
                 <div className="space-y-3 mb-8">
-                  <a href="tel:+919943750590" className="flex items-center gap-3 text-gray-300 hover:text-secondary transition">
+                  <a href="tel:+919943750590" className="flex items-center gap-3 text-dark/70 hover:text-secondary transition">
                     <Phone size={20} />
                     <span>+91 9943750590</span>
                   </a>
-                  <a href="mailto:anjalivashisth1111@gmail.com" className="flex items-center gap-3 text-gray-300 hover:text-secondary transition">
+                  <a href="mailto:jobsforanjalivashisth@gmail.com" className="flex items-center gap-3 text-dark/70 hover:text-secondary transition">
                     <Mail size={20} />
-                    <span>anjalivashisth1111@gmail.com</span>
+                    <span>jobsforanjalivashisth@gmail.com</span>
                   </a>
                 </div>
 
@@ -108,47 +108,47 @@ export default function Home() {
           </motion.div>
 
           {/* About Section */}
-          <motion.div variants={itemVariants} className="mb-16 p-8 rounded-xl bg-gradient-to-r from-secondary/10 to-accent/10 border border-secondary/20">
-            <h2 className="text-3xl font-bold text-light mb-4">About Me</h2>
-            <p className="text-gray-300 leading-relaxed mb-4">
+          <motion.div variants={itemVariants} className="mb-16 p-8 rounded-xl bg-gradient-to-r from-secondary/5 to-accent/5 border border-secondary/20">
+            <h2 className="text-3xl font-bold text-dark mb-4">About Me</h2>
+            <p className="text-dark/80 leading-relaxed mb-4">
               As said by Dalai Lama, &quot;The purpose of our lives is to be Happy&quot;, I believe in finding solutions from Nature, Activeness, Determination and Satisfaction.
             </p>
-            <p className="text-gray-300 leading-relaxed">
-              Seeking a position in a fit organization where I discover my full potential while working for the company dedicatedly. I&apos;m passionate about technology, design, and making a positive impact in communities through volunteering and mentorship.
+            <p className="text-dark/80 leading-relaxed">
+              With 5 years of experience in data engineering, I&apos;ve led technical initiatives at Infosys and Danske Bank, driving 95% automation improvements and building scalable solutions. Beyond work, I&apos;m passionate about mentorship, continuous learning, and making positive community impact.
             </p>
           </motion.div>
 
           {/* Work Highlights */}
           <motion.div variants={itemVariants} className="mb-16">
-            <h2 className="text-3xl font-bold mb-8 text-light">Work Highlights</h2>
+            <h2 className="text-3xl font-bold mb-8 text-dark">Work Highlights</h2>
             <div className="grid md:grid-cols-2 gap-8">
               {[
                 {
                   title: "Achievements",
-                  items: ["AWS Cloud Practitioner", "Scrum Master Certified", "Databricks Certified"],
+                  items: ["Insta Award - Big Data Automation", "Gem Award - Task Optimization", "Promoted to Technical Lead", "95% Automation Improvement"],
                 },
                 {
-                  title: "Work Involved",
-                  items: ["Automation - Python", "CICD - Azure", "ETL & DAGs - Airflow"],
+                  title: "Technical Stack",
+                  items: ["Python, SQL, PySpark, Hive", "Airflow, Kafka, Databricks", "Azure Pipelines, AWS", "Tableau, DataStage"],
                 },
                 {
-                  title: "Extras",
-                  items: ["Presented in Various Meets", "Organized Events", "Team Leadership"],
+                  title: "Key Projects",
+                  items: ["ETL Pipeline Development", "Airflow DAG Migration (600+)", "GenAI Chatbot Creation", "CI/CD Infrastructure"],
                 },
                 {
-                  title: "Awards",
-                  items: ["Gem Award", "Agile Champion", "Promoted to Senior Engineer"],
+                  title: "Impact",
+                  items: ["Reduced Manual Effort by 95%", "90% Load Time Improvement", "Led Cross-Functional Teams", "Mentored Junior Developers"],
                 },
               ].map((highlight, index) => (
                 <motion.div
                   key={index}
                   variants={itemVariants}
-                  className="p-6 rounded-xl bg-gradient-to-br from-secondary/10 to-accent/10 border border-secondary/20 hover:border-accent/40 transition-all"
+                  className="p-6 rounded-xl bg-gradient-to-br from-secondary/5 to-accent/5 border border-secondary/20 hover:border-secondary/40 transition-all"
                 >
                   <h3 className="text-xl font-bold text-secondary mb-4">{highlight.title}</h3>
                   <ul className="space-y-2">
                     {highlight.items.map((item, i) => (
-                      <li key={i} className="flex items-center gap-2 text-gray-300">
+                      <li key={i} className="flex items-center gap-2 text-dark/80">
                         <div className="w-2 h-2 bg-accent rounded-full"></div>
                         {item}
                       </li>
@@ -159,24 +159,50 @@ export default function Home() {
             </div>
           </motion.div>
 
-          {/* College Highlights */}
+          {/* Education Highlights */}
           <motion.div variants={itemVariants} className="mb-16">
-            <h2 className="text-3xl font-bold mb-8 text-light">College Highlights</h2>
-            <div className="p-8 rounded-xl bg-gradient-to-r from-secondary/10 to-accent/10 border border-secondary/20">
-              <ul className="space-y-4">
-                {[
-                  "Vice President and Co-Founder of Vriksh Club (Environmental Initiative)",
-                  "Published 2 Papers in IEEE Explorer and Springer",
-                  "Award Winner - Women Techies Hackathon 2019",
-                  "On-Stage Performances & Event Hosting",
-                  "Volunteer & Event Organizer - CommicCon, Red Cross Youth, Creativity Clubs",
-                ].map((item, index) => (
-                  <li key={index} className="flex items-start gap-3 text-gray-300">
-                    <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
+            <h2 className="text-3xl font-bold mb-8 text-dark">Education & Certifications</h2>
+            <div className="p-8 rounded-xl bg-gradient-to-r from-secondary/5 to-accent/5 border border-secondary/20">
+              <div className="grid md:grid-cols-2 gap-8">
+                <div>
+                  <h3 className="text-xl font-semibold text-secondary mb-4">Education</h3>
+                  <ul className="space-y-3 text-dark/80">
+                    <li className="flex items-start gap-2">
+                      <span className="w-2 h-2 bg-accent rounded-full mt-1.5 flex-shrink-0"></span>
+                      <span><strong>M.S. in ML and AI</strong> - Liverpool John Moores University (2023-2024)</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="w-2 h-2 bg-accent rounded-full mt-1.5 flex-shrink-0"></span>
+                      <span><strong>PG Certification in ML and AI</strong> - IIIT Bangalore (GPA: 3.4/4.0)</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="w-2 h-2 bg-accent rounded-full mt-1.5 flex-shrink-0"></span>
+                      <span><strong>B.Tech (CSE)</strong> - VIT Vellore (GPA: 8.94/10)</span>
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-secondary mb-4">Certifications</h3>
+                  <ul className="space-y-3 text-dark/80">
+                    <li className="flex items-center gap-2">
+                      <span className="w-2 h-2 bg-accent rounded-full"></span>
+                      Databricks – Data Engineer Associate
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="w-2 h-2 bg-accent rounded-full"></span>
+                      AWS – Cloud Practitioner
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="w-2 h-2 bg-accent rounded-full"></span>
+                      Certified Scrum Master
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="w-2 h-2 bg-accent rounded-full"></span>
+                      ML by Andrew Ng (Coursera)
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </motion.div>
 

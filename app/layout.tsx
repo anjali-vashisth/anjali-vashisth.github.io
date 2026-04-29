@@ -18,7 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.className} bg-primary text-light`}>
+      <body className={`${inter.className} bg-primary text-dark`}>
         <div className="flex">
           <Sidebar />
           <main className="flex-1 overflow-auto">
