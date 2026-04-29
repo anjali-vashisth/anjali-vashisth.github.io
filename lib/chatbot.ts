@@ -73,7 +73,7 @@ const resumeData = {
     { degree: "B.Tech in CSE", institution: "VIT Vellore", gpa: "8.94/10", year: "2021" },
   ],
 
-  certifications: ["Databricks - Data Engineer Associate", "AWS - Cloud Practitioner", "Certified Scrum Master", "ML by Andrew Ng (Coursera)"],
+  certifications: ["Databricks Certified Professional (2025)", "AWS - Cloud Practitioner", "Certified Scrum Master", "ML by Andrew Ng (Coursera)"],
 
   awards: ["Insta Award - Big Data Automation", "Gem Award - Task Optimization", "Agile Champion", "Google Dev Hackathon Award"],
 
@@ -179,7 +179,7 @@ I'm passionate about combining academic research with practical applications. Vi
 ✓ Women Techies Hackathon 2019 Award
 
 **Certifications:**
-✓ Databricks - Data Engineer Associate
+✓ Databricks Certified Professional (2025)
 ✓ AWS - Cloud Practitioner
 ✓ Certified Scrum Master
 ✓ ML Specialization (Andrew Ng - Coursera)`,

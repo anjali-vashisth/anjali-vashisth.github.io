@@ -77,7 +77,7 @@ const skills = [
   },
   {
     category: "Certifications",
-    items: ["Databricks Data Engineer Associate", "AWS Cloud Practitioner", "Certified Scrum Master", "ML by Andrew Ng"],
+    items: ["Databricks Certified Professional", "AWS Cloud Practitioner", "Certified Scrum Master", "ML by Andrew Ng"],
   },
 ];
 

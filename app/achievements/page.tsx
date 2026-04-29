@@ -44,7 +44,7 @@ const achievements = [
 const certifications = [
   { title: "AWS Cloud Practitioner", issuer: "Amazon Web Services", year: "2023" },
   { title: "Scrum Master Certified", issuer: "Scrum Alliance", year: "2023" },
-  { title: "Databricks Certified", issuer: "Databricks", year: "2024" },
+  { title: "Databricks Certified Professional", issuer: "Databricks", year: "2025" },
 ];
 
 const certificationsUrl = "https://www.linkedin.com/in/anjalivashisth/details/certifications/";
