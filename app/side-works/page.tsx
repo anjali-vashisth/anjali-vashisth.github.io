@@ -177,13 +177,13 @@ export default function SideWorks() {
                 Interested in collaborating?
               </h3>
               <p className="text-gray-400 mb-6">
-                I'm always open to new projects, partnerships, and opportunities to make a positive impact!
+                I&apos;m always open to new projects, partnerships, and opportunities to make a positive impact!
               </p>
               <a
                 href="/#contact"
                 className="inline-block bg-gradient-to-r from-secondary to-accent px-8 py-3 rounded-lg font-semibold text-white hover:scale-105 transition-transform glow"
               >
-                Let's Connect
+                Let&apos;s Connect
               </a>
             </div>
           </motion.div>

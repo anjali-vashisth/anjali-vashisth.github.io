@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Award, Trophy, Star, Download, Certificate, Zap } from "lucide-react";
+import { Award, Trophy, Star, Download, Award as CertIcon, Zap } from "lucide-react";
 
 const achievements = [
   {
@@ -137,7 +137,7 @@ export default function Achievements() {
                 >
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-4">
-                      <Certificate className="text-secondary flex-shrink-0" size={24} />
+                      <Award className="text-secondary flex-shrink-0" size={24} />
                       <div>
                         <h3 className="text-lg font-bold text-light">{cert.title}</h3>
                         <p className="text-gray-400 text-sm">{cert.issuer}</p>

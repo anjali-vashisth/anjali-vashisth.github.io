@@ -111,10 +111,10 @@ export default function Home() {
           <motion.div variants={itemVariants} className="mb-16 p-8 rounded-xl bg-gradient-to-r from-secondary/10 to-accent/10 border border-secondary/20">
             <h2 className="text-3xl font-bold text-light mb-4">About Me</h2>
             <p className="text-gray-300 leading-relaxed mb-4">
-              As said by Dalai Lama, "The purpose of our lives is to be Happy", I believe in finding solutions from Nature, Activeness, Determination and Satisfaction.
+              As said by Dalai Lama, &quot;The purpose of our lives is to be Happy&quot;, I believe in finding solutions from Nature, Activeness, Determination and Satisfaction.
             </p>
             <p className="text-gray-300 leading-relaxed">
-              Seeking a position in a fit organization where I discover my full potential while working for the company dedicatedly. I'm passionate about technology, design, and making a positive impact in communities through volunteering and mentorship.
+              Seeking a position in a fit organization where I discover my full potential while working for the company dedicatedly. I&apos;m passionate about technology, design, and making a positive impact in communities through volunteering and mentorship.
             </p>
           </motion.div>
 
