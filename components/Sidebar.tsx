@@ -77,22 +77,31 @@ export default function Sidebar() {
             <p className="text-xs text-gray-500 mb-4">Connect with me</p>
             <div className="flex gap-4">
               <a
-                href="#"
-                className="w-10 h-10 rounded-lg bg-secondary/10 flex items-center justify-center hover:bg-secondary/20 text-secondary"
+                href="https://linkedin.com/in/anjalivash19231"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-lg bg-secondary/10 flex items-center justify-center hover:bg-secondary/20 text-secondary hover:text-accent transition-all"
+                title="LinkedIn"
               >
                 in
               </a>
               <a
-                href="#"
-                className="w-10 h-10 rounded-lg bg-secondary/10 flex items-center justify-center hover:bg-secondary/20 text-secondary"
+                href="https://instagram.com/anjali__vashisth"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-lg bg-secondary/10 flex items-center justify-center hover:bg-secondary/20 text-secondary hover:text-accent transition-all"
+                title="Instagram"
               >
-                gh
+                ig
               </a>
               <a
-                href="#"
-                className="w-10 h-10 rounded-lg bg-secondary/10 flex items-center justify-center hover:bg-secondary/20 text-secondary"
+                href="https://twitter.com/AnjaliVashist20"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-lg bg-secondary/10 flex items-center justify-center hover:bg-secondary/20 text-secondary hover:text-accent transition-all"
+                title="Twitter"
               >
-                tw
+                𝕏
               </a>
             </div>
           </div>
