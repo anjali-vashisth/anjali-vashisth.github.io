@@ -1,0 +1,151 @@
+\documentclass[10pt,letterpaper]{article}
+
+\usepackage[margin=0.62in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{tabularx}
+
+\definecolor{ink}{HTML}{1F2937}
+\definecolor{muted}{HTML}{5B6472}
+\definecolor{teal}{HTML}{0F766E}
+\definecolor{amber}{HTML}{B45309}
+\definecolor{line}{HTML}{D6D3D1}
+
+\hypersetup{
+  colorlinks=true,
+  urlcolor=teal,
+  linkcolor=teal
+}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\tabcolsep}{0pt}
+\renewcommand{\familydefault}{\sfdefault}
+\color{ink}
+
+\titleformat{\section}
+  {\large\bfseries\color{teal}}
+  {}
+  {0em}
+  {}
+  [\vspace{-0.35em}{\color{line}\titlerule}]
+
+\titlespacing*{\section}{0pt}{1.0em}{0.55em}
+\setlist[itemize]{leftmargin=1.15em, topsep=0.15em, itemsep=0.18em, parsep=0pt}
+
+\newcommand{\role}[4]{
+  \begin{tabularx}{\textwidth}{X r}
+    \textbf{#1} --- #2 & \textcolor{muted}{#3} \\
+    \textcolor{muted}{#4} & \\
+  \end{tabularx}
+  \vspace{-0.85em}
+}
+
+\newcommand{\project}[3]{
+  \textbf{#1} \hfill \textcolor{muted}{#2}
+  \begin{itemize}
+    #3
+  \end{itemize}
+}
+
+\begin{document}
+
+{\Huge \textbf{Anjali Vashisth}}\\[-0.1em]
+{\large Data Engineer \textbar{} Technical Lead \textbar{} Big Data Automation}\\[0.35em]
+Bangalore, India \quad
+\href{mailto:jobsforanjalivashisth@gmail.com}{jobsforanjalivashisth@gmail.com} \quad
++91 9943750590 \quad
+\href{https://www.linkedin.com/in/anjalivashisth}{linkedin.com/in/anjalivashisth}
+
+\section*{Professional Summary}
+Data Engineer with 5+ years of experience building scalable data pipelines, workflow automation, CI/CD processes, and Big Data solutions across banking and enterprise environments. Strong background in Python, SQL, PySpark, Hive, Airflow, Kafka, Azure Pipelines, and Databricks. Known for reducing manual effort through automation, migrating large orchestration estates, improving load performance, and translating messy operational data problems into reliable systems.
+
+\section*{Skills}
+\begin{tabularx}{\textwidth}{@{}l X@{}}
+\textbf{Languages} & Python, SQL, PySpark, Hive, Shell Scripting, Java \\
+\textbf{Big Data} & Hadoop, Kafka, Databricks, Airflow, DataStage, Hive, Delta Lake \\
+\textbf{Cloud \& DevOps} & Azure DevOps, Azure Pipelines, AWS, Git, Jenkins, CI/CD automation \\
+\textbf{Data Engineering} & ETL/ELT pipelines, orchestration, data validation, ingestion automation, metadata systems \\
+\textbf{Analytics} & Tableau, Power BI, Jupyter, Pandas, Matplotlib \\
+\textbf{Ways of Working} & Agile delivery, Jira, Confluence, technical documentation, mentoring, cross-squad collaboration \\
+\end{tabularx}
+
+\section*{Experience}
+\role{Technical Lead}{Infosys --- Danske Bank}{Apr 2025 -- Present}{Bangalore, India}
+\begin{itemize}
+  \item Lead cross-squad collaboration for timely delivery of data engineering solutions across banking data platforms.
+  \item Automated Airflow DAG creation and related workflow setup, reducing manual operational effort by up to 95\%.
+  \item Structured unstructured Hive data into SQL-ready datasets to improve analytics access and downstream reporting.
+  \item Mentor developers, review technical designs, and support reliable delivery practices for data platform initiatives.
+\end{itemize}
+
+\role{Technical Analyst}{Infosys --- Danske Bank}{Sep 2023 -- Apr 2025}{Bangalore, India}
+\begin{itemize}
+  \item Built and maintained ETL pipelines across DB2, Hive, SQL, and Big Data environments.
+  \item Migrated 600+ Airflow DAGs using Azure Pipelines, improving release consistency and deployment traceability.
+  \item Created a GenAI chatbot for Big Data metadata discovery and pipeline visualization use cases.
+  \item Improved manual operations through automation and reusable pipeline patterns across recurring team workflows.
+\end{itemize}
+
+\role{Software Engineer}{Danske IT}{Oct 2022 -- Sep 2023}{Bangalore, India}
+\begin{itemize}
+  \item Automated ingestion and CI/CD workflows, reducing load time by up to 90\%.
+  \item Automated Kafka ingestion processes and managed Hive/SQL control validation for operational data flows.
+  \item Supported Agile delivery ceremonies and maintained technical documentation using Confluence and Jira.
+\end{itemize}
+
+\role{Associate Software Engineer}{Danske IT}{Aug 2021 -- Oct 2022}{Bangalore, India}
+\begin{itemize}
+  \item Migrated repositories to Azure DevOps and built CI/CD pipelines for data engineering delivery.
+  \item Automated deployments and supported machine learning workflows using Pandas and Scikit-learn.
+  \item Enabled Jenkins-based CI/CD for DAG publishing from source repositories.
+\end{itemize}
+
+\section*{Projects}
+\project{Airflow DAG Migration Factory}{Airflow, Python, Azure Pipelines, Git}{
+  \item Designed a reusable migration workflow for moving 600+ Airflow DAGs through controlled Azure Pipeline releases.
+  \item Improved deployment repeatability, validation discipline, and operational visibility for orchestration assets.
+}
+
+\project{Metadata-Aware Data Chatbot}{Python, LLM, Hive, SQL}{
+  \item Built a GenAI assistant for Big Data metadata discovery, pipeline context lookup, and operational knowledge access.
+  \item Helped teams reduce time spent searching documentation and manually tracing data pipeline relationships.
+}
+
+\project{Kafka Ingestion Automation}{Kafka, Hive, SQL, Python}{
+  \item Automated Kafka ingestion workflows with Hive and SQL validation controls for more predictable data movement.
+  \item Improved handoffs between ingestion, validation, and downstream analytics consumers.
+}
+
+\project{Modern Portfolio Website}{Next.js, TypeScript, Tailwind CSS, Framer Motion}{
+  \item Built a personal portfolio with a data-engineer storytelling theme, lightweight animations, and responsive UI.
+  \item Kept this project as a focused presentation layer for professional branding rather than a general frontend skill claim.
+}
+
+\section*{Education}
+\begin{tabularx}{\textwidth}{X r}
+\textbf{M.S. in Machine Learning and Artificial Intelligence}, Liverpool John Moores University & 2024 \\
+\textbf{PG Certification in Machine Learning and Artificial Intelligence}, IIIT Bangalore, GPA: 3.4/4.0 & 2023 \\
+\textbf{B.Tech in Computer Science and Engineering}, VIT Vellore, GPA: 8.94/10 & 2021 \\
+\end{tabularx}
+
+\section*{Certifications}
+\begin{itemize}
+  \item Databricks Certified Professional, 2025
+  \item AWS Cloud Practitioner
+  \item Certified Scrum Master
+  \item Machine Learning by Andrew Ng, Coursera
+  \item Certification details: \href{https://www.linkedin.com/in/anjalivashisth/details/certifications/}{linkedin.com/in/anjalivashisth/details/certifications}
+\end{itemize}
+
+\section*{Research Publications}
+\begin{itemize}
+  \item \textbf{LIMAP: A Lightweight Multilayer Authentication Protocol for WBAN}, Springer, Aug 27, 2021. \href{https://link.springer.com/article/10.1007/s11277-021-08853-x}{Springer publication}
+  \item \textbf{GCN embedded with Polynomial Aggregation Function for Group Activity Recognition}, 2020 IEEE 4th Conference on Information \& Communication Technology (CICT), Dec 5, 2020. \href{https://ieeexplore.ieee.org/document/9312103/authors#authors}{IEEE publication}
+\end{itemize}
+
+\end{document}
