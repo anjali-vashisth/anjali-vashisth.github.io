@@ -22,10 +22,10 @@ const fadeUp = {
 };
 
 const terminalLines = [
-  "airflow scheduler: queued daily_finance_snapshot",
-  "spark-submit: normalizing 42M records into curated zones",
-  "dbt test: accepted_values + freshness checks passed",
-  "kafka consumer: lag recovered, tea still hot",
+  "airflow scheduler: 200+ DAGs running, and monitored",
+  "etl with spark: processing 100M records daily with 95% success",
+  "data quality: accepted_values + freshness checks passed",
+  "kafka consumer: lags recovered, corrupt messages quarantined",
 ];
 
 const stats = [
@@ -165,7 +165,7 @@ function HeroSection() {
             href="#projects"
             className="inline-flex items-center justify-center gap-2 rounded-md bg-amber-300 px-5 py-3 font-semibold text-stone-950 shadow-[0_0_30px_rgba(245,158,11,0.25)] transition hover:-translate-y-0.5 hover:bg-amber-200 focus:outline-none focus:ring-2 focus:ring-amber-200 focus:ring-offset-2 focus:ring-offset-[#080b0f]"
           >
-            Inspect the pipelines
+            Inspect the projects
             <ArrowRight size={18} aria-hidden="true" />
           </Link>
           <Link

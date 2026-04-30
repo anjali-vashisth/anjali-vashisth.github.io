@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Sidebar from "@/components/Sidebar";
 import ChatWidget from "@/components/ChatWidget";
+import ResumeDownload from "@/components/ResumeDownload";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,6 +25,7 @@ export default function RootLayout({
           <Sidebar />
           <main className="min-h-screen md:pl-72">
             {children}
+            <ResumeDownload />
             <ChatWidget />
           </main>
         </div>

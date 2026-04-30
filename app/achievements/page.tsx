@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Award, Trophy, Star, Download, ExternalLink, Zap } from "lucide-react";
+import { Award, Trophy, Star, ExternalLink, Zap } from "lucide-react";
 
 const achievements = [
   {
@@ -198,18 +198,6 @@ export default function Achievements() {
                 </div>
               </div>
             </div>
-          </motion.div>
-
-          {/* Resume Download */}
-          <motion.div variants={itemVariants}>
-            <a
-              href="/Anjali_Vashisth_Resume_19Apr2026.pdf"
-              download
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-secondary to-accent px-8 py-4 rounded-lg font-semibold text-white hover:scale-105 transition-transform glow"
-            >
-              <Download size={20} />
-              Download My Resume
-            </a>
           </motion.div>
         </div>
       </motion.div>
